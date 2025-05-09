@@ -3,11 +3,16 @@ import React from "react";
 
 const Home = ({ products, addToCart }) => (
   <div data-testid="home">
-    <h2 data-testid="home-heading">Welcome to HackerMart</h2>
+    <h2 data-testid="home-heading">Welcome to HackerMarket</h2>
     <div data-testid="featured-products">
       <table data-testid="products">
         <thead>
-          <tr><th>Name</th><th>Description</th><th>Cost</th><th>Action</th></tr>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Cost</th>
+                <th>Action</th>
+            </tr>
         </thead>
         <tbody>
           {products.map(product => (
