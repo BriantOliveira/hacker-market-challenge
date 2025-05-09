@@ -1,4 +1,3 @@
-// src/components/Cart/index.js
 import React from "react";
 
 const Cart = ({ cart = [], removeFromCart }) => {
@@ -8,28 +7,28 @@ const Cart = ({ cart = [], removeFromCart }) => {
     <div data-testid="shopping-cart">
       <div data-testid="cart">
         <h2 data-testid="cart-heading">Your Cart</h2>
-        <table>
-          <thead>
-            <tr><th>Name</th><th>Description</th><th>Cost</th><th>Action</th></tr>
-          </thead>
-          <tbody>
-            {(cart ?? []).map(product => (
-              <tr key={product.id}>
-                <td>{product.name}</td>
-                <td>{product.description}</td>
-                <td>${product.price.toFixed(2)}</td>
-                <td>
-                  <button
-                    data-testid={`remove-from-cart-button-${product.id}`}
-                    onClick={() => removeFromCart(product.id)}
-                  >
-                    Remove from Cart
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <div className="cart-list">
+          {(cart ?? []).map((product) => (
+            <div key={product.id} className="cart-item">
+              <img
+                src={product.image}
+                alt={product.name}
+                className="cart-item-image"
+              />
+              <div className="cart-item-details">
+                <p>{product.name}</p>
+                <p>{product.description}</p>
+                <p>${product.price.toFixed(2)}</p>
+              </div>
+              <button
+                data-testid={`remove-from-cart-button-${product.id}`}
+                onClick={() => removeFromCart(product.id)}
+              >
+                Remove
+              </button>
+            </div>
+          ))}
+        </div>
         <h3 data-testid="cart-total">Total: ${total}</h3>
       </div>
     </div>
