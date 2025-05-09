@@ -1,6 +1,34 @@
-# Getting Started with Create React App
+# 🛍️ HackerMarket
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to **HackerMarket**, a minimalist full-stack shopping cart built with **React** and **React Router**. This project demonstrates modern UI design, state management, routing, and test-driven development — all in one compact e-commerce experience.
+
+---
+
+## ✨ Features
+
+- 🛒 **Add to Cart** with quantity tracking
+- 🧾 **Remove from Cart** with decrement logic
+- 🖼️ Product **images & responsive grid layout**
+- 📦 Clean **cart list view** with subtotal and total
+- 🔔 Smooth **toast notifications** for user actions
+- 🚫 Empty cart **placeholder**
+- ✅ Fully **tested** with React Testing Library
+
+---
+
+## 📸 Preview
+
+![HackerMart Screenshot](https://via.placeholder.com/800x400?text=HackerMart+Preview)
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/BriantOliveira/hacker-market-challenge.git
+cd hackermart
 
 ## Available Scripts
 
@@ -68,3 +96,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
