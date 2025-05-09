@@ -2,7 +2,9 @@ import React from "react";
 
 const Home = ({ products, addToCart }) => (
   <div data-testid="home">
-    <h2 data-testid="home-heading">Welcome to HackerMart</h2>
+    <h2 className="hero-title" data-testid="home-heading">
+        Welcome to <span className="highlight">HackerMart</span>
+    </h2>
     <div className="product-grid" data-testid="featured-products">
       {products.map(product => (
         <div key={product.id} className="product-card">
