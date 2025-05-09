@@ -10,17 +10,58 @@ function HackerMarket() {
   const [toastMessage, setToastMessage] = useState('');
 
   const addToCart = (product) => {
-    if (!cart.find((item) => item.id === product.id)) {
-      setCart([...cart, product]);
+    const existing = cart.find((item) => item.product.id === product.id);
+    if (existing) {
+      setCart(
+        cart.map((item) =>
+          item.product.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        )
+      );
+      showToast(`${product.name} added to cart`);
+    } else {
+      setCart([...cart, { product, quantity: 1 }]);
       showToast(`${product.name} added to cart`);
     }
   };
+  
 
-  const removeFromCart = (id) => {
-    const item = cart.find((p) => p.id === id);
-    setCart(cart.filter((p) => p.id !== id));
-    showToast(`${item?.name} removed from cart`);
+//   const addToCart = (product) => {
+//     if (!cart.find((item) => item.id === product.id)) {
+//       setCart([...cart, product]);
+//       showToast(`${product.name} added to cart`);
+//     }
+//   };
+
+//   const removeFromCart = (id) => {
+//     const item = cart.find((p) => p.id === id);
+//     setCart(cart.filter((p) => p.id !== id));
+//     showToast(`${item?.name} removed from cart`);
+//   };
+
+const removeFromCart = (productId) => {
+    const existingItem = cart.find((item) => item.product.id === productId);
+  
+    if (!existingItem) return;
+  
+    if (existingItem.quantity > 1) {
+      // Decrement quantity
+      setCart(
+        cart.map((item) =>
+          item.product.id === productId
+            ? { ...item, quantity: item.quantity - 1 }
+            : item
+        )
+      );
+      showToast(`1 ${existingItem.product.name} removed from cart`);
+    } else {
+      // Remove item completely
+      setCart(cart.filter((item) => item.product.id !== productId));
+      showToast(`${existingItem.product.name} removed from cart`);
+    }
   };
+  
 
   const showToast = (message) => {
     setToastMessage(message);

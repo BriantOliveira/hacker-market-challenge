@@ -171,3 +171,15 @@ h3 {
   color: #555;
 }
 
+.empty-cart {
+  text-align: center;
+  padding: 2rem;
+  color: #555;
+}
+
+.empty-cart-image {
+  width: 100px;
+  height: 100px;
+  opacity: 0.7;
+  margin-bottom: 1rem;
+}
