@@ -1,11 +1,14 @@
-// src/App.js
-import React from "react";
-import HackerMarket from "./components/HackerMarket";
-import "./App.css";
-
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import HackerMarket from './components/HackerMarket';
+import './App.css'; 
 
 function App() {
-  return <HackerMarket />;
+  return (
+    <BrowserRouter>
+      <HackerMarket />
+    </BrowserRouter>
+  );
 }
 
 export default App;

@@ -1,8 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders HackerMart navbar', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const homeLink = screen.getByTestId('home-link');
+  const cartLink = screen.getByTestId('cart-link');
+  expect(homeLink).toBeInTheDocument();
+  expect(cartLink).toBeInTheDocument();
 });
