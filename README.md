@@ -18,7 +18,7 @@ Welcome to **HackerMarket**, a minimalist full-stack shopping cart built with **
 
 ## 📸 Preview
 
-![HackerMart Screenshot](https://via.placeholder.com/800x400?text=HackerMart+Preview)
+![HackerMart Screenshot](https://ibb.co/nqNBz8fJ)
 
 ---
 
